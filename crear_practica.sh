@@ -119,7 +119,7 @@ a {
 		esac
 	fi
 	#Se integra Swiper JS en la practica si el usuario lo desea
-	echo "Desea integrar Swiper JS en el Proyecto? [S/n]:"
+	echo "Desea integrar SwiperJS en el Proyecto? [S/n]:"
 	read r
 	if [[ r == "s" || r == "S" ]];then
 		echo "	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />" >> "$c"/index.html
