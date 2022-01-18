@@ -98,6 +98,14 @@ a {
 		echo "	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">" >> "$c"/index.html
 		echo "Font Awesome Integrado Exitosamente!!!"
 	fi
+	#Se intega IonIcon en el proyecto si el usuario asi lo desea
+	echo "Desea integrar Ion-Icon en este Proyecto? [S/n]:"
+	read r
+	if [[ $r == "s" || $r == "S" ]];then
+		echo "	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>"
+		echo "Ion-Icon Integrado Exitosamente!!!"
+	fi
 	#Se integra Bootstrap en el proyecto si el usuario asi lo desea
 	echo "Desea inplementar Bootstrap en el proyecto? [S/n]:"
 	read r
