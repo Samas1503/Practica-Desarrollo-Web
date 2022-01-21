@@ -201,11 +201,12 @@ body {
 
 .user {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .user img {
@@ -267,22 +268,21 @@ body {
 
 .details {
     position: relative;
-    width: 100%;
     padding: 20px;
     display: flex;
-    grid-template-colums: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
-    //margin-top: 10px;
+    margin-top: 10px;
 }
 
-.details .recentOrders{
+.details .recentOrders {
     position: relative;
     display: grid;
     min-height: 500px;
     background: var(--white);
     padding: 20px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.8);
-    border-radius:  20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
 }
 
 .cardHeader {
@@ -306,7 +306,7 @@ body {
 }
 
 .details table {
-    width:100%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
@@ -317,7 +317,7 @@ body {
 
 .details table thead tr {
     color: var(--black1);
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .details table thead tr:last-child {
@@ -330,20 +330,147 @@ body {
 }
 
 .details .recentOrders table tr td {
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .details .recentOrders table tr td:last-child {
-  text-align: end;   
+    text-align: end;
 }
-
 
 .details .recentOrders table tr td:nth-child(2) {
-  text-align: end;
+    text-align: end;
 }
-
 
 .details .recentOrders table tr td:nth-child(4) {
-  text-align: center;
+    text-align: center;
 }
 
+.estado.entregado {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.pendiente {
+    padding: 2px 4px;
+    background: #f9ca3f;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.devuelto {
+    padding: 2px 4px;
+    background: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.enProgreso {
+    padding: 2px 4px;
+    background: #1795ce;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentCustomers {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    width: 300px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
+    border-radius: 20px;
+}
+
+.recentCustomers .imgBox {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentCustomers .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentCustomers table {
+    width: 100%;
+}
+
+.recentCustomers table tr td {
+    padding: 12px 10px;
+}
+
+.recentCustomers table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.recentCustomers table tr td h4 span {
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.recentCustomers table tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.recentCustomers table tr:hover td h4 span {
+    color: var(--white);
+}
+
+
+/* responsive design */
+
+@media (max-width: 991px) {
+    .navigation {
+        left: -300px;
+    }
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+    .main {
+        width: 100px;
+        left: 0;
+    }
+    .main.active {
+        left: 300px;
+    }
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .recentOrders {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
